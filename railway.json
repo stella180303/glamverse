@@ -2,7 +2,12 @@
   "build": {
     "env": {
       "APP_ENV": "production"
-    }
+    },
+    "commands": [
+      "composer install --optimize-autoloader --no-dev",
+      "npm install",
+      "npm run build"
+    ]
   },
   "startCommand": "php artisan serve --host 0.0.0.0 --port $PORT"
 }
