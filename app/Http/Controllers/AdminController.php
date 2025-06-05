@@ -70,7 +70,8 @@ class AdminController extends Controller
             } elseif ($usertype == 'ownersalon') {
                 $user_id = Auth::id();
                 $data = profil_salon::where('user_id', $user_id)->get();
-                return view('ownersalon.index', compact('data'));
+                $profil_salon = profil_salon::where('user_id', $user_id)->first();
+                return view('ownersalon.index', compact('data', 'profil_salon'));
             } elseif ($usertype == 'user') {
                 return view('home.index', compact('data', 'profil_salon', 'berita')); 
             }

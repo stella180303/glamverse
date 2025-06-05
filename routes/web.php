@@ -18,9 +18,6 @@ Route::get('/cek-admin', function () {
 
 
 // public'
-Route::get('/', function () {
-    return 'Laravel is alive on Railway! 🚂';
-});
 Route::get('/', [AdminController::class, 'home'])->name('home');
 
 
