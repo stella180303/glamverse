@@ -15,6 +15,15 @@ use App\Http\Controllers\Auth\ForgotPasswordController;
 Route::get('/cek-admin', function () {
     return 'Route /cek-admin berhasil!';
 });
+
+
+// public'
+Route::get('/', function () {
+    return 'Laravel is alive on Railway! 🚂';
+});
+Route::get('/', [AdminController::class, 'home'])->name('home');
+
+
 /*
 |--------------------------------------------------------------------------
 | Auth Routes 
@@ -70,12 +79,6 @@ Route::middleware('auth')->group(function () {
     
 });
 
-/*
-|--------------------------------------------------------------------------
-| Public Routes
-|--------------------------------------------------------------------------
-*/
-Route::get('/', [AdminController::class, 'home'])->name('home');
 
 
 // CRUD Berita
