@@ -341,11 +341,11 @@ class AdminController extends Controller
         // cloud
          $uploadedFileUrl = Cloudinary::upload($request->file('gambar')->getRealPath())->getSecurePath();
 
+        // 'gambar' => $namaGambar,
 
         Berita::create([
             'judul' => $request->judul,
             'author' => $request->author,
-            // 'gambar' => $namaGambar,
             'gambar' => $uploadedFileUrl,
             'deskripsi' => $request->deskripsi,
             'tanggal' => $request->tanggal,
