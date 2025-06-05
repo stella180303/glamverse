@@ -117,10 +117,13 @@ class AdminController extends Controller
     //     }
 
         //cloud
-        if ($request->hasFile('gambar')) {
-            $uploadedFileUrl = Cloudinary::upload($request->file('gambar')->getRealPath())->getSecurePath();
-            $data->gambar = $uploadedFileUrl;
-        }
+        $image = base64_encode(file_get_contents($request->file('gambar')->getRealPath()));
+        $response = Http::asForm()->post('https://api.imgbb.com/1/upload', [
+            'key' => env('IMGBB_API_KEY'),
+            'image' => $image,
+        ]);
+        $data->gambar = $response->json()['data']['url'] ?? null;
+
        $data->alamat = $request->alamat;
        $data->jam_buka = $request->jam_buka;
        $data->jam_tutup = $request->jam_tutup;
@@ -184,10 +187,12 @@ class AdminController extends Controller
         // }
 
         //cloud
-        if ($request->hasFile('gambar')) {
-            $uploadedFileUrl = Cloudinary::upload($request->file('gambar')->getRealPath())->getSecurePath();
-            $data->gambar = $uploadedFileUrl;
-        }
+        $image = base64_encode(file_get_contents($request->file('gambar')->getRealPath()));
+        $response = Http::asForm()->post('https://api.imgbb.com/1/upload', [
+            'key' => env('IMGBB_API_KEY'),
+            'image' => $image,
+        ]);
+        $data->gambar = $response->json()['data']['url'] ?? null;
 
         $data->alamat = $request->alamat;
         $data->jam_buka = $request->jam_buka;
@@ -245,10 +250,12 @@ class AdminController extends Controller
         // }
 
         //cloud
-        if ($request->hasFile('gambar')) {
-            $uploadedFileUrl = Cloudinary::upload($request->file('gambar')->getRealPath())->getSecurePath();
-            $data_layanan->gambar = $uploadedFileUrl;
-        }
+        $image = base64_encode(file_get_contents($request->file('gambar')->getRealPath()));
+        $response = Http::asForm()->post('https://api.imgbb.com/1/upload', [
+            'key' => env('IMGBB_API_KEY'),
+            'image' => $image,
+        ]);
+        $data_layanan->gambar = $response->json()['data']['url'] ?? null;
 
         $data_layanan->user_id = Auth::id(); 
         $data_layanan->save();
@@ -287,10 +294,12 @@ class AdminController extends Controller
         // }
 
         // cloud
-        if ($request->hasFile('gambar')) {
-            $uploadedFileUrl = Cloudinary::upload($request->file('gambar')->getRealPath())->getSecurePath();
-            $data_layanan->gambar = $uploadedFileUrl;
-        }
+       $image = base64_encode(file_get_contents($request->file('gambar')->getRealPath()));
+        $response = Http::asForm()->post('https://api.imgbb.com/1/upload', [
+            'key' => env('IMGBB_API_KEY'),
+            'image' => $image,
+        ]);
+        $data_layanan->gambar = $response->json()['data']['url'] ?? null;
 
 
         $data_layanan->save();
@@ -324,6 +333,8 @@ class AdminController extends Controller
     }
 
     public function simpanBerita(Request $request) {
+        
+    try {
         $request->validate([
             'judul' => 'required|string|max:255',
             'author' => 'required|string|max:255',
@@ -339,9 +350,16 @@ class AdminController extends Controller
         // $gambar->move('gambar_berita', $namaGambar);
 
         // cloud
-         $uploadedFileUrl = Cloudinary::upload($request->file('gambar')->getRealPath())->getSecurePath();
-
-        // 'gambar' => $namaGambar,
+           $uploadedFileUrl = null;
+            if ($request->hasFile('gambar')) {
+                $image = base64_encode(file_get_contents($request->file('gambar')->getRealPath()));
+                $response = Http::asForm()->post('https://api.imgbb.com/1/upload', [
+                    'key' => env('IMGBB_API_KEY'),
+                    'image' => $image,
+                ]);
+                $uploadedFileUrl = $response->json()['data']['url'] ?? null;
+            }
+        // 'gambar' => $namaGambar, 
 
         Berita::create([
             'judul' => $request->judul,
@@ -353,6 +371,9 @@ class AdminController extends Controller
         ]);
 
         return redirect('/listBerita')->with('success', 'Berita berhasil ditambahkan!');
+        } catch (\Exception $e) {
+        return back()->with('error', 'Gagal upload: ' . $e->getMessage());
+    }
     }
 
     public function editBerita($id) {
@@ -387,10 +408,12 @@ class AdminController extends Controller
         // }
 
         // cloud
-        if ($request->hasFile('gambar')) {
-            $uploadedFileUrl = Cloudinary::upload($request->file('gambar')->getRealPath())->getSecurePath();
-            $berita->gambar = $uploadedFileUrl;
-        }
+        $image = base64_encode(file_get_contents($request->file('gambar')->getRealPath()));
+        $response = Http::asForm()->post('https://api.imgbb.com/1/upload', [
+            'key' => env('IMGBB_API_KEY'),
+            'image' => $image,
+        ]);
+        $berita->gambar = $response->json()['data']['url'] ?? null;
 
         $berita->save();
 
