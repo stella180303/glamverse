@@ -50,7 +50,7 @@
                             <label>Nama Layanan</label>
                             <input type="text" name="nama_layanan" class="input">
                         </div>
-
+                        
                         <div>
                             <label>Deskripsi Layanan</label>
                             <textarea name="deskripsi_layanan" id="" cols="53" rows="5"></textarea>
@@ -61,7 +61,10 @@
                             <input type="text" inputmode="numeric" name="harga" class="input">
                         </div>
 
-                        
+                        <div>
+                            <label>Gambar Layanan</label>
+                            <input type="file" name="gambar" class="input" accept="image/*" required>
+                        </div>
 
                         <div>
                             <input class="btn btn-primary submit" type="submit" value="Simpan">

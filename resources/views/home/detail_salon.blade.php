@@ -149,7 +149,7 @@
                
                     <div class="col-4 layanan">
                          <a href=" {{ url('layanan/' . $layanan->id) }}">
-                        <figure><img src="/layanan/{{$layanan->gambar}}" alt="#" class="layananimg"/></figure>
+                        <figure><img src="{{ $layanan->gambar }}" alt="{{ $layanan->nama_layanan }}" class="layananimg"/></figure>
                         <p class="judul_layanan">
                             {{$layanan->nama_layanan}}
                         </p>

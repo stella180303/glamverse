@@ -71,7 +71,7 @@
                         <td>{{$data->nama_layanan}}</td>
                         <td>{{$data->deskripsi_layanan}}</td>
                         <td>{{$data->harga}}</td>
-                        <td><img src="/layanan/{{$data->gambar}}" alt=""></td>
+                        <td><img src="{{$data->gambar}}" alt=""></td>
                         <td>
                             @if ($data->hari_tersedia)
                                 @foreach (json_decode($data->hari_tersedia) as $hari)

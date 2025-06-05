@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Booking;
@@ -107,13 +108,19 @@ class AdminController extends Controller
 
        $data->nama_salon = $request->nama_salon;
        
-       $gambar = $request->gambar;
-        if($gambar){
-            $namagambar = time(). '.' . $gambar->getClientOriginalExtension();
-            $request->gambar->move('profil', $namagambar);
-            $data->gambar = $namagambar;
-        }
+       // local
+    //    $gambar = $request->gambar;
+    //     if($gambar){
+    //         $namagambar = time(). '.' . $gambar->getClientOriginalExtension();
+    //         $request->gambar->move('profil', $namagambar);
+    //         $data->gambar = $namagambar;
+    //     }
 
+        //cloud
+        if ($request->hasFile('gambar')) {
+            $uploadedFileUrl = Cloudinary::upload($request->file('gambar')->getRealPath())->getSecurePath();
+            $data->gambar = $uploadedFileUrl;
+        }
        $data->alamat = $request->alamat;
        $data->jam_buka = $request->jam_buka;
        $data->jam_tutup = $request->jam_tutup;
@@ -168,11 +175,18 @@ class AdminController extends Controller
         $data = profil_salon::find($id);
         $data->nama_salon = $request->nama_salon;
 
-        $gambar = $request->gambar;
-        if($gambar){
-            $namagambar = time(). '.' . $gambar->getClientOriginalExtension();
-            $request->gambar->move('profil', $namagambar);
-            $data->gambar = $namagambar;
+        // local
+        // $gambar = $request->gambar;
+        // if($gambar){
+        //     $namagambar = time(). '.' . $gambar->getClientOriginalExtension();
+        //     $request->gambar->move('profil', $namagambar);
+        //     $data->gambar = $namagambar;
+        // }
+
+        //cloud
+        if ($request->hasFile('gambar')) {
+            $uploadedFileUrl = Cloudinary::upload($request->file('gambar')->getRealPath())->getSecurePath();
+            $data->gambar = $uploadedFileUrl;
         }
 
         $data->alamat = $request->alamat;
@@ -220,12 +234,20 @@ class AdminController extends Controller
         $data_layanan->hari_tersedia = json_encode($request->hari_tersedia);
         $data_layanan->jam_tersedia = json_encode($request->jam_tersedia);
 
-        $gambar = $request->gambar;
+
+        // local
+        // $gambar = $request->gambar;
         
-        if($gambar){
-            $namagambar = time(). '.' . $gambar->getClientOriginalExtension();
-            $request->gambar->move('layanan', $namagambar);
-            $data_layanan->gambar = $namagambar;
+        // if($gambar){
+        //     $namagambar = time(). '.' . $gambar->getClientOriginalExtension();
+        //     $request->gambar->move('layanan', $namagambar);
+        //     $data_layanan->gambar = $namagambar;
+        // }
+
+        //cloud
+        if ($request->hasFile('gambar')) {
+            $uploadedFileUrl = Cloudinary::upload($request->file('gambar')->getRealPath())->getSecurePath();
+            $data_layanan->gambar = $uploadedFileUrl;
         }
 
         $data_layanan->user_id = Auth::id(); 
@@ -256,12 +278,20 @@ class AdminController extends Controller
         $data_layanan->hari_tersedia = json_encode($request->hari_tersedia);
         $data_layanan->jam_tersedia = json_encode($request->jam_tersedia);
 
-        $gambar = $request->gambar;
-        if ($gambar) {
-            $namagambar = time(). '.' . $gambar->getClientOriginalExtension();
-            $request->gambar->move('layanan', $namagambar);
-            $data_layanan->gambar = $namagambar;
+        // local
+        // $gambar = $request->gambar;
+        // if ($gambar) {
+        //     $namagambar = time(). '.' . $gambar->getClientOriginalExtension();
+        //     $request->gambar->move('layanan', $namagambar);
+        //     $data_layanan->gambar = $namagambar;
+        // }
+
+        // cloud
+        if ($request->hasFile('gambar')) {
+            $uploadedFileUrl = Cloudinary::upload($request->file('gambar')->getRealPath())->getSecurePath();
+            $data_layanan->gambar = $uploadedFileUrl;
         }
+
 
         $data_layanan->save();
 
@@ -303,9 +333,14 @@ class AdminController extends Controller
             'link' => 'nullable|url',
         ]);
 
-        $gambar = $request->file('gambar');
-        $namaGambar = time() . '.' . $gambar->getClientOriginalExtension();
-        $gambar->move('gambar_berita', $namaGambar);
+        // local
+        // $gambar = $request->file('gambar');
+        // $namaGambar = time() . '.' . $gambar->getClientOriginalExtension();
+        // $gambar->move('gambar_berita', $namaGambar);
+
+        // cloud
+         $uploadedFileUrl = Cloudinary::upload($request->file('gambar')->getRealPath())->getSecurePath();
+
 
         Berita::create([
             'judul' => $request->judul,
@@ -342,11 +377,18 @@ class AdminController extends Controller
         $berita->tanggal = $request->tanggal;
         $berita->link = $request->link;
 
+        // local
+        // if ($request->hasFile('gambar')) {
+        //     $gambar = $request->file('gambar');
+        //     $namaGambar = time() . '.' . $gambar->getClientOriginalExtension();
+        //     $gambar->move('gambar_berita', $namaGambar);
+        //     $berita->gambar = $namaGambar;
+        // }
+
+        // cloud
         if ($request->hasFile('gambar')) {
-            $gambar = $request->file('gambar');
-            $namaGambar = time() . '.' . $gambar->getClientOriginalExtension();
-            $gambar->move('gambar_berita', $namaGambar);
-            $berita->gambar = $namaGambar;
+            $uploadedFileUrl = Cloudinary::upload($request->file('gambar')->getRealPath())->getSecurePath();
+            $berita->gambar = $uploadedFileUrl;
         }
 
         $berita->save();

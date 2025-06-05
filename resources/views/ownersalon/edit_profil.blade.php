@@ -67,7 +67,7 @@
 
                         <div>
                             <label>Gambar yang sudah terunggah</label>
-                            <img src="/profil/{{$data->gambar}}" alt="" class="img">
+                            <img src="{{$data->gambar}}" alt="" class="img">
                         </div>
                         <div>
                             <label>Unggah gambar terbaru</label>

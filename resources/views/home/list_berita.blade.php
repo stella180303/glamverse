@@ -34,7 +34,7 @@
                     <div class="col-md-4 col-sm-6 mb-4">
                         <div id="serv_hover" class="salon listsalon">
                             <div class="salon_img">
-                                <figure><img src="/gambar_berita/{{ $item->gambar }}" alt="#" style="height:200px; object-fit:cover;" /></figure>
+                                <figure><img src="{{ $item->gambar }}" alt="{{ $item->judul }}" style="height:200px; object-fit:cover;" /></figure>
                             </div>
                             <div class="salonlist">
                                 <h3 class="nama_salon" style="line-height: 1.5;">{{ $item->judul }}</h3>

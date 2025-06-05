@@ -14,7 +14,7 @@
                <div class="blog_box">
                   <div class="blog_img">
                      <figure>
-                        <img src="{{ asset('gambar_berita/' . $item->gambar) }}" alt="gambar berita"/>
+                        <img src="{{ $item->gambar }}" alt="{{ $item->judul }}"/>
                      </figure>
                   </div>
                   <div class="blog_room">

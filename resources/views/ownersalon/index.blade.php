@@ -55,7 +55,7 @@
                   @foreach($profil_salon as $data) 
                   <tr>
                       <td>{{$data->nama_salon}}</td>
-                      <td><img src="/profil/{{$data->gambar}}" alt=""></td>
+                      <td><img src="{{$data->gambar}}" alt=""></td>
                       <td>{{$data->alamat}}</td>
                       <td>{{$data->jam_buka}}</td>
                       <td>{{$data->jam_tutup}}</td>

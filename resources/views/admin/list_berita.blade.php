@@ -59,7 +59,7 @@
                         <tr>
                             <td>{{ $berita->judul }}</td>
                             <td>{{ $berita->author }}</td>
-                            <td><img src="/gambar_berita/{{ $berita->gambar }}" alt="Gambar Berita"></td>
+                            <td><img src="{{ $berita->gambar }}" alt="Gambar Berita"></td>
                             <td>{{ $berita->deskripsi }}</td>
                             <td>{{ \Carbon\Carbon::parse($berita->tanggal)->format('d M Y') }}</td>
                             <td>

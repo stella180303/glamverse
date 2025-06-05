@@ -68,7 +68,7 @@
                 <p class="judul_kelengkapan">
                     <i class="fa fa-list icondetail" aria-hidden="true"></i> Layanan yang dipilih
                 </p>
-                <figure><img src="/layanan/{{$layanan->gambar}}" alt="#" class="layanaimgdetail"/></figure>
+                <figure><img src="{{ $layanan->gambar }}" alt="{{ $layanan->nama_layanan }}" class="layanaimgdetail"/></figure>
                 <p class="judul_layanan">{{ $layanan->nama_layanan }}</p>
             </div>
 

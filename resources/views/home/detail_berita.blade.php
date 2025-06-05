@@ -22,7 +22,7 @@
                 <p class="text-muted mb-2">
                     {{ \Carbon\Carbon::parse($berita->tanggal)->format('d M Y') }} - {{ $berita->author }}
                 </p>
-                <img src="{{ asset('gambar_berita/' . $berita->gambar) }}" alt="gambar berita" class="img-fluid mb-4" />
+                <img  src="{{ $berita->gambar }}" alt="gambar berita" class="img-fluid mb-4" />
                 <div style="text-align: justify; text-justify: inter-word">
                     {!! $berita->deskripsi !!}
                 </div>

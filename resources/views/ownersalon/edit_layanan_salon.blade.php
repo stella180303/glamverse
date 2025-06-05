@@ -75,7 +75,7 @@ _<!DOCTYPE html>
 
                         <div>
                             <label>Gambar yang sudah terunggah</label>
-                            <img src="/layanan/{{$layanan->gambar}}" alt="" class="img">
+                            <img src="{{$layanan->gambar}}" alt="" class="img">
                         </div>
 
                         <div>

@@ -57,7 +57,7 @@
 
             <div class="form-group">
                 <label for="gambar">Gambar Berita</label>
-                <img src="{{ asset('gambar_berita/' . $berita->gambar) }}" width="150">
+                <img src="{{ $berita->gambar }}" width="150">
                 <input type="file" name="gambar" class="input" required>
             </div>
 
