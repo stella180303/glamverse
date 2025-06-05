@@ -6,22 +6,22 @@
 <meta name="robots" content="all,follow">
 
 <!-- Bootstrap CSS -->
-<link rel="stylesheet" href="{{ asset('ownersalon1/vendor/bootstrap/css/bootstrap.min.css') }}">
+<link rel="stylesheet" href="ownersalon1/vendor/bootstrap/css/bootstrap.min.css">
 
 <!-- Font Awesome CSS -->
-<link rel="stylesheet" href="{{ asset('ownersalon1/vendor/font-awesome/css/font-awesome.min.css') }}">
+<link rel="stylesheet" href="ownersalon1/vendor/font-awesome/css/font-awesome.min.css">
 
 <!-- Custom Font Icons CSS -->
-<link rel="stylesheet" href="{{ asset('ownersalon1/css/font.css') }}">
+<link rel="stylesheet" href="ownersalon1/css/font.css">
 
 <!-- Google fonts - Muli -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:300,400,700">
 
 <!-- Theme stylesheet -->
-<link rel="stylesheet" href="{{ asset('ownersalon1/css/style.default.css') }}" id="theme-stylesheet">
+<link rel="stylesheet" href="ownersalon1/css/style.default.css" id="theme-stylesheet">
 
 <!-- Favicon -->
-<link rel="shortcut icon" href="{{ asset('ownersalon1/img/favicon.ico') }}">
+<link rel="shortcut icon" href="ownersalon1/img/favicon.ico">
 
 <!-- Tweaks for older IEs -->
 <!--[if lt IE 9]>

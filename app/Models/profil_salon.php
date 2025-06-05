@@ -34,7 +34,7 @@ class profil_salon extends Model
 
     public function layanan()
     {
-        return $this->hasMany(layanan_salon::class, 'profil_salon_id', 'id');
+        return $this->hasMany(layanan_salon::class, 'user_id', 'user_id');
     }
 
 }
