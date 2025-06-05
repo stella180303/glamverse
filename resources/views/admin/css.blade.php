@@ -6,13 +6,13 @@
 <meta name="robots" content="all,follow">
 
 <!-- Bootstrap CSS -->
-<link rel="stylesheet" href="admin1/vendor/bootstrap/css/bootstrap.min.css'">
+<link rel="stylesheet" href="admin1/vendor/bootstrap/css/bootstrap.min.css">
 
 <!-- Font Awesome CSS -->
 <link rel="stylesheet" href="admin1/vendor/font-awesome/css/font-awesome.min.css">
 
 <!-- Custom Font Icons CSS -->
-<link rel="stylesheet" href="'admin1/css/font.css'">
+<link rel="stylesheet" href="admin1/css/font.css">
 
 <!-- Google fonts - Muli -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:300,400,700">

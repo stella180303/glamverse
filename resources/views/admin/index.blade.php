@@ -2,7 +2,6 @@
   <html>
   {{-- Halaman admin --}}
       {{-- css --}}
-      <link rel="stylesheet" href="{{ asset('test.css') }}">
     <head> 
       @include('admin.css')
       <style>
