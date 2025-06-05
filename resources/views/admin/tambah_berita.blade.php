@@ -42,7 +42,7 @@
                     </h1>
                 </div>
 
-                <form action="{{ url('/simpan_berita') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('admin.simpanBerita') }}" method="POST" enctype="multipart/form-data">
             @csrf
 
             <div>
