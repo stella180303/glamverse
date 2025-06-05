@@ -345,7 +345,8 @@ class AdminController extends Controller
         Berita::create([
             'judul' => $request->judul,
             'author' => $request->author,
-            'gambar' => $namaGambar,
+            // 'gambar' => $namaGambar,
+            'gambar' => $uploadedFileUrl,
             'deskripsi' => $request->deskripsi,
             'tanggal' => $request->tanggal,
             'link' => $request->link,
