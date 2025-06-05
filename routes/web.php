@@ -81,7 +81,7 @@ Route::middleware('auth')->group(function () {
 // CRUD Berita
 Route::get('/listBerita', [AdminController::class, 'listBerita']);
 Route::get('/tambah_berita', [AdminController::class, 'formTambahBerita']);
-Route::post('/tambah_berita', [AdminController::class, 'simpanBerita']);
+Route::post('/simpan_berita', [AdminController::class, 'simpanBerita']);
 Route::get('/edit_berita/{id}', [AdminController::class, 'editBerita'])->name('admin.editBerita');
 Route::post('/update_berita/{id}', [AdminController::class, 'updateBerita'])->name('admin.updateBerita');
 Route::get('/hapus_berita/{id}', [AdminController::class, 'hapusBerita'])->name('admin.hapusBerita');

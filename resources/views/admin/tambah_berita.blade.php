@@ -42,7 +42,7 @@
                     </h1>
                 </div>
 
-                <form action="{{ url('/tambah_berita') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ url('/simpan_berita') }}" method="POST" enctype="multipart/form-data">
             @csrf
 
             <div>
