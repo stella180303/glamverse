@@ -1,11 +1,12 @@
-_<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
+    @include('ownersalon.css')
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Profil Salon</title>
-    @include('ownersalon.css')
+    
     <style>
         label{
             display: inline-block;
@@ -76,6 +77,10 @@ _<!DOCTYPE html>
                         <div>
                             <label>Gambar yang sudah terunggah</label>
                             <img src="{{$layanan->gambar}}" alt="" class="img">
+                        </div>
+                        <div>
+                            <label>Unggah gambar terbaru</label>
+                            <input type="file" name="gambar" class="input" accept="image/*" required>
                         </div>
 
                         <div>

@@ -57,7 +57,7 @@
 
             <div class="form-group">
                 <label for="gambar">Gambar Berita</label>
-                <input type="file" name="gambar" class="input" required>
+                 <input type="file" name="gambar" class="input" accept="image/*" required>
             </div>
 
             <div class="form-group">

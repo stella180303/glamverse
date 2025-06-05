@@ -77,7 +77,7 @@
 
                         <div>
                             <label>Gambar</label>
-                            <input type="file" name="gambar" class="input">
+                             <input type="file" name="gambar" class="input" accept="image/*" required>
                         </div>
 
                         <div>

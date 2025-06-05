@@ -58,7 +58,7 @@
             <div class="form-group">
                 <label for="gambar">Gambar Berita</label>
                 <img src="{{ $berita->gambar }}" width="150">
-                <input type="file" name="gambar" class="input" required>
+                <input type="file" name="gambar" class="input" accept="image/*" required>
             </div>
 
             <div class="form-group">

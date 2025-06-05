@@ -71,7 +71,7 @@
                         </div>
                         <div>
                             <label>Unggah gambar terbaru</label>
-                            <input type="file" name="gambar" class="input">
+                            <input type="file" name="gambar" class="input" accept="image/*" required>
                         </div>
 
                         <div>
