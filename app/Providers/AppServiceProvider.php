@@ -25,7 +25,7 @@
             if (env('APP_ENV') === 'production') {
                 URL::forceScheme('https');
             }
-            Config::$serverKey = 'SB-Mid-server-rf0Qaa7RwzntcofhycLlDWQS';
+            Config::$serverKey = 'SB-Mid-server-rf0Qaa7RwzhttntcofhycLlDWQS';
             Config::$isProduction = false;
             Config::$isSanitized = true;
             Config::$is3ds = true;
