@@ -20,6 +20,11 @@ Route::get('/cek-csrf', function () {
     return csrf_token();
 });
 
+Route::get('/test-session', function () {
+    session(['debug' => 'glamverse sukses']);
+    return session('debug');
+});
+
 // public'
 Route::get('/', [AdminController::class, 'home'])->name('home');
 
