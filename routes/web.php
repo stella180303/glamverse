@@ -16,6 +16,9 @@ Route::get('/cek-admin', function () {
     return 'Route /cek-admin berhasil!';
 });
 
+Route::get('/cek-csrf', function () {
+    return csrf_token();
+});
 
 // public'
 Route::get('/', [AdminController::class, 'home'])->name('home');
