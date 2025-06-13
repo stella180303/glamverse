@@ -4,7 +4,7 @@
     use Illuminate\Support\ServiceProvider;
     use Midtrans\Config;
     use Illuminate\Filesystem\Filesystem;
-
+    use Illuminate\Support\Facades\URL;
     class AppServiceProvider extends ServiceProvider
     {
         /**
@@ -22,6 +22,9 @@
          */
         public function boot(): void
         {
+            if (env('APP_ENV') === 'production') {
+                URL::forceScheme('https');
+            }
             Config::$serverKey = 'SB-Mid-server-rf0Qaa7RwzntcofhycLlDWQS';
             Config::$isProduction = false;
             Config::$isSanitized = true;
